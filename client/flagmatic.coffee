@@ -63,11 +63,21 @@ emit = ($item, item) ->
 bind = ($item, item) ->
   $item.find('canvas').click  ->
     data = this.toDataURL()
-    ajax = $.post '/favicon.png', {image: data}, (reply) ->
-    ajax.done ->
-      $item.find('.caption').text 'sweet'
-    ajax.error ->
-      $item.find('.caption').text 'ouch, logged in?'
+    pageFlagPath = "/wiki/favicon.png"
+    siteFaviconPath = "/favicon.png"
+    fileData = data.replace(///^data:image/png;base64,///, "")
+    await wiki.archive.writeFile(pageFlagPath, fileData, {encoding: 'base64'})
+    .then (err) ->
+      if err
+        $item.find('.caption').text 'ouch'
+      else
+        $item.find('.caption').text 'sweet'
+    await wiki.archive.writeFile(siteFaviconPath, fileData, {encoding: 'base64'})
+    .then (err) ->
+      if err
+        $item.find('.caption').text 'ouch'
+      else
+        $item.find('.caption').text 'sweet'
     delay 1500, ->
       $item.find('.caption').text 'choose another flag'
 
