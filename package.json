@@ -1,7 +1,7 @@
 {
-  "name": "wiki-plugin-flagmatic",
+  "name": "@paul90/wiki-plugin-flagmatic",
   "version": "0.1.3",
-  "description": "Federated Wiki - Flagmatic Plugin",
+  "description": "Federated Wiki - Flagmatic Plugin (dat variant)",
   "keywords": [
     "flagmatic",
     "wiki",
@@ -19,17 +19,17 @@
   },
   "devDependencies": {
     "expect.js": "*",
-    "grunt": "^1.0.1",
-    "grunt-contrib-coffee": "^1.0.0",
-    "grunt-contrib-watch": "^1.0.0",
+    "grunt": "^1.0.3",
+    "grunt-contrib-coffee": "^2.0.0",
+    "grunt-contrib-watch": "^1.1.0",
     "grunt-git-authors": "^3.2.0",
     "grunt-mocha-test": "^0.13.2",
-    "mocha": "^3.2.0"
+    "mocha": "^5.2.0"
   },
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fedwiki/wiki-plugin-flagmatic.git"
+    "url": "https://github.com/paul90/wiki-plugin-flagmatic-dat.git"
   },
   "bugs": {
     "url": "https://github.com/fedwiki/wiki-plugin-flagmatic/issues"
